@@ -32,7 +32,7 @@ module Receipts
         font "Primary"
       end
 
-      font_size 8
+      font_size 10  
     end
 
     def load_image(logo)
@@ -49,7 +49,7 @@ module Receipts
       if logo.nil?
         text company.fetch(:name), align: :right, style: :bold, size: 16, color: "4b5563"
       else
-        image load_image(logo), height: height, position: :right
+        image load_image(logo), height: 30, position: :right
       end
 
       move_up height
@@ -72,7 +72,7 @@ module Receipts
 
       line_items = [
         [
-          {content: "<b>#{company.fetch(:name)}</b>\n#{company_details}", padding: [0, 12, 0, 0]},
+          # {content: "<b>#{company.fetch(:name)}</b>\n#{company_details}", padding: [0, 12, 0, 0]},
           {content: Array(recipient).join("\n"), padding: [0, 12, 0, 0]}
         ]
       ]
